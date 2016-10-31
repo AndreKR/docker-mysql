@@ -2,5 +2,6 @@ FROM alpine:latest
 RUN apk update
 RUN apk upgrade
 RUN apk add mysql mysql-client
-RUN echo -e '[mysqld]\nuser=root\ndatadir=/var/lib/mysql\nskip-grant-tables\nskip-name-resolve' > /etc/mysql/my.cnf
+RUN echo -e '[mysqld]\nuser=root\ndatadir=/var/lib/mysql\nsocket=/var/run/mysql.sock\nskip-grant-tables\nskip-name-resolve' > /etc/mysql/my.cnf
+RUN mysql_install_db
 ENTRYPOINT ["mysqld"]
