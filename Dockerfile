@@ -15,7 +15,7 @@ RUN echo -e '[mysqld]\n\
              key_buffer_size = 4M\n\
              query_cache_size = 1M\n\
              tmp_table_size = 1M\n\
-             max_allowed_packet = 1M\n\
+             max_allowed_packet = 4M\n\
              table_open_cache = 16\n\
              sort_buffer_size = 256K\n\
              net_buffer_length = 8K\n\
