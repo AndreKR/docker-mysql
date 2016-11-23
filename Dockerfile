@@ -1,7 +1,5 @@
 FROM alpine:latest
-RUN apk update
-RUN apk upgrade
-RUN apk add mysql mysql-client
+RUN apk update && apk upgrade && apk add mysql mysql-client
 RUN echo -e '[mysqld]\n\
              user=root\n\
              datadir=/var/lib/mysql\n\
